@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.4"?>
+<plugin>
+
+   <extension
+         point="net.bioclipse.scripting.contribution">
+      <scriptContribution
+            service="net.bioclipse.pv.business.DemoManagerFactory"
+            id="net.bioclipse.demo.business.DemoManager">
+      </scriptContribution>
+   </extension>
+<extension
+        point="org.eclipse.ui.commands">
+        <category
+              id="net.bioclipse.ui.dummyCategory"
+              name="DummyCategory">
+        </category>
+     <command
+           id="net.bioclipse.ui.commands.dummyCommand"
+           categoryId="net.bioclipse.ui.dummyCategory"
+           name="Dummy"/>
+  </extension>
+  <extension
+        point="org.eclipse.ui.handlers">
+     <handler
+        class="net.bioclipse.pv.ui.actions.DummyActionHandler"
+        commandId="net.bioclipse.ui.commands.dummyCommand">
+     </handler>
+</extension> 
+ <extension
+        point="org.eclipse.ui.editors">
+    <editor
+          class="net.bioclipse.pv.editor.PathvisioEditor"
+          default="true"
+          extensions="gpml"
+          icon="icons/bigcateye.gif"
+          id="net.bioclipse.demo"
+          name="GPML Viewer">
+    
+   </editor>
+  </extension>
+ 
+  
+ <extension
+        point="org.eclipse.ui.bindings">
+     <key
+           commandId="net.bioclipse.ui.commands.dummyCommand"
+           schemeId="org.eclipse.ui.defaultAcceleratorConfiguration"
+           sequence="M1+D"/>
+  </extension>
+  <extension 
+  id="add.item"
+  point="org.eclipse.ui.menus">
+ <menuContribution
+    locationURI= "menu:org.eclipse.ui.main.menu?after=additions">
+    <menu
+       id="net.bc.dummyMenu"
+       label="DummyMenu">
+    </menu>
+ </menuContribution>
+<menuContribution
+    locationURI= "menu:net.bc.dummyMenu?after=additions">
+    <command
+       commandId="net.bioclipse.ui.commands.dummyCommand"
+       icon= "icons/bigcateye.gif"
+       id= "testCMDItem"
+       label= "Dummy Item">
+    </command>
+</menuContribution>
+<menuContribution
+           locationURI="popup:org.eclipse.ui.popup.any?after=additions">
+        <command
+              commandId="net.bioclipse.ui.commands.dummyCommand">
+	        </command>
+     </menuContribution>
+     
+</extension>
+<extension
+        point="org.eclipse.core.contenttype.contentTypes">
+     <content-type
+           id="net.bioclipse.biojava.ui.sequenceType"
+           name="sequence"
+           base-type="org.eclipse.core.runtime.xml"
+           file-extensions="gpml">
+     </content-type>
+     </extension>
+   
+     
+  
+ 
+</plugin>
