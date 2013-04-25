@@ -37,11 +37,12 @@ import org.pathvisio.gui.view.VPathwaySwing;
 
 public class PathvisioPanel extends JPanel{
 
-    private Pathway pathway;
+    public static Pathway pathway;
     private VPathway vPathway;
     private VPathwaySwing wrapper;
    public static JPanel panel;
     private JScrollPane scrollPane = new JScrollPane();
+    
 
 
     public PathvisioPanel() throws HeadlessException {

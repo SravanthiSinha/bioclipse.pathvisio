@@ -10,12 +10,23 @@
  ******************************************************************************/
 package net.bioclipse.pv.business;
 
+import java.io.IOException;
+
+import org.bridgedb.IDMapperException;
+import org.pathvisio.core.model.ConverterException;
+
 import net.bioclipse.core.PublishedClass;
+import net.bioclipse.core.PublishedMethod;
 import net.bioclipse.managers.business.IBioclipseManager;
 
 @PublishedClass(
     value="TODO: Describe the manager here."
 )
 public interface IDemoManager extends IBioclipseManager {
-
+	 @PublishedMethod(
+	            methodSummary = "test of js with pv")
+	    public String test(String cmd) ;
+	 @PublishedMethod(
+	            methodSummary = "gets all the label of the datnodes presemnt in pathway")
+	 public String getListOfDataNodes() ;
 }

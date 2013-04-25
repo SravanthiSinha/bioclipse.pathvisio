@@ -1,7 +1,7 @@
 Manifest-Version: 1.0
 Bundle-ManifestVersion: 2
-Bundle-Name: Demo
-Bundle-SymbolicName: net.bioclipse.demo; singleton:=true
+Bundle-Name: pv
+Bundle-SymbolicName: net.bioclipse.pv;singleton:=true
 Bundle-Version: 1.0.0.qualifier
 Bundle-Activator: net.bioclipse.pv.Activator
 Export-Package: net.bioclipse.pv,

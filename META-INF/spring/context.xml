@@ -8,11 +8,11 @@
 
   <osgi:service id="javaDemoManagerOSGI"
                 ref="javaDemoManager"
-                interface="net.bioclipse.demo.business.IJavaDemoManager" />
+                interface="net.bioclipse.pv.business.IJavaDemoManager" />
 
   <osgi:service id="javaScriptDemoManagerOSGI"
                 ref="javaScriptDemoManager"
-                interface="net.bioclipse.demo.business.IJavaScriptDemoManager" />
+                interface="net.bioclipse.pv.business.IJavaScriptDemoManager" />
 
   <osgi:reference id="recordingAdvice"
                   interface="net.bioclipse.recording.IRecordingAdvice" />
@@ -33,7 +33,7 @@
   </bean>
 
   <bean id="DemoManagerTarget"
-        class="net.bioclipse.demo.business.DemoManager">
+        class="net.bioclipse.pv.business.DemoManager">
   </bean>
 
   <bean id="javaScriptDemoManager"
@@ -41,7 +41,7 @@
     <property name="target"
               ref="DemoManagerTarget" />
     <property name="proxyInterfaces"
-              value="net.bioclipse.demo.business.IJavaScriptDemoManager" />
+              value="net.bioclipse.pv.business.IJavaScriptDemoManager" />
     <property name="interceptorNames" >
         <list>
             <value>recordingAdvisor</value>
@@ -56,7 +56,7 @@
     <property name="target"
               ref="DemoManagerTarget" />
     <property name="proxyInterfaces"
-              value="net.bioclipse.demo.business.IJavaDemoManager" />
+              value="net.bioclipse.pv.business.IJavaDemoManager" />
     <property name="interceptorNames" >
         <list>
                 <value>recordingAdvisor</value>

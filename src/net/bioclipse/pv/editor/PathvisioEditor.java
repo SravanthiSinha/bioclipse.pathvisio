@@ -95,4 +95,8 @@ import org.eclipse.ui.part.EditorPart;
 		// TODO Auto-generated method stub
 		
 	}
+	
+	public String test(String c) {
+		return "C";
+	}
    }
